@@ -1,0 +1,45 @@
+<view class="container">
+
+<!-- 包裹整个意见输入区域（白色背景） -->
+<view class="input-wrapper">
+  <!-- 文本框 -->
+  <textarea 
+    class="input-area" 
+    placeholder="请简短的表达您的想法或建议，以帮助我们的产品更好的适应市场环境..." 
+    bindinput="onInput"
+    value="{{content}}"
+    maxlength="120"
+    auto-height
+  ></textarea>
+  <view class="char-count">{{contentLength}}/120 字</view>
+  
+  <!-- 图片上传按钮 -->
+  <view class="image-area">
+    <block wx:for="{{imageList}}" wx:key="index">
+    <view class="image-box">
+      <image 
+        src="{{item}}" 
+        class="preview-image" 
+        mode="aspectFill" 
+      />
+      <image 
+        src="/images/delete.png" 
+        class="delete-icon" 
+        bindtap="removeImage" 
+        data-index="{{index}}" 
+      />
+    </view>
+    </block>
+
+    <!-- 上传按钮，图片少于5张时才显示 -->
+    <view wx:if="{{imageList.length < 5}}" class="image-box upload-box" bindtap="chooseImage">
+      <text>上传图片</text>
+      <text>最多5张</text>
+    </view>
+  </view>
+</view>
+   <!-- 提交按钮区域 -->
+   <view class="submit-area">
+      <button style="width: 95%" class="submit-button {{canSubmit ? 'active' : 'disabled'}}" bindtap="onSubmit">提 交</button>
+   </view>
+</view>

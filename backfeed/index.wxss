@@ -1,0 +1,126 @@
+.container {
+    width: 100%;
+    background-color: #f0f0f0; /* 浅灰色背景 */
+    min-height: 100vh; /* 确保页面占满整个视窗 */
+    padding-bottom: 230rpx; /* 底部留空230rpx */
+    border: none;
+  }
+  
+  
+  .input-wrapper {
+    background: #fff;
+    padding: 20rpx 0rpx 30rpx 20rpx;
+    position: relative;
+    width: 100%;
+  }
+  
+  .input-area {
+    background: #fff;
+    width: 100%;
+    color: #282828;
+    font-size: 32rpx;
+    line-height: 45rpx;
+    margin-bottom: 50rpx;
+    min-height: 200rpx;
+  }
+
+  .char-count {
+    color: #A9A9A9; /* 默认浅灰色 */
+    font-size: 24rpx;
+    text-align: right;
+    margin-top: 10rpx;
+    margin-right: 20rpx;
+    transition: color 0.3s ease;
+  }
+
+  .image-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10rpx;
+    padding-left: 5rpx;
+  }
+
+  .image-box {
+    width: calc((100% - 40rpx) / 3);  /* 3列布局，每行两个gap间距 */
+    position: relative;
+    aspect-ratio: 1 / 1;              /* 正方形框（微信基础库2.10+支持） */
+    border-radius: 12rpx;
+    overflow: hidden;
+  }
+
+  .preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12rpx;
+    border: 2rpx solid #ddd;
+  }
+
+  .delete-icon {
+    position: absolute;
+    top: 6rpx;
+    right: 6rpx;
+    width: 40rpx;
+    height: 40rpx;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 4rpx;
+  }
+/* 上传框样式 */
+.upload-box {
+    border: 2rpx dashed #cccccc;
+    color: #666;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+/* 删除图标定位 */
+.delete-icon {
+  position: absolute;
+  top: 6rpx;
+  right: 6rpx;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 4rpx;
+}
+
+  .submit-area {
+    width: 100%;
+    padding: 10rpx 0rpx calc(16rpx + env(safe-area-inset-bottom));
+    align-items: center;
+    background-color: #fff;
+    bottom: 0;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+  }
+ .submit-button {
+  width: 100%; /* 确保按钮宽度占满父容器 */
+  font-size: 35rpx; /* 设置字体大小 */
+  color: white;
+  border-radius: 10rpx; /* 设置按钮圆角 */
+  text-align: center;
+  line-height: 80rpx; /* 垂直居中文本 */
+  border: none;
+}
+
+.submit-button.disabled {
+    background-color: #cccccc;  /* 灰色 */
+    color: #ffffff;
+  }
+  
+  .submit-button.active {
+    background-color: #000000;  /* 蓝色 */
+    color: #ffffff;
+  }
